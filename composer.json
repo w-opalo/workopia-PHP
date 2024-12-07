@@ -1,0 +1,16 @@
+{
+    "name":"w-opalo/workopia2.php",
+    "description": "Job Listing Application",
+    "authors": [
+        {
+            "name": "Willice Opalo",
+            "email": "williceopalo11@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Framework\\":"Framework/",
+            "App\\":"App/"
+        }
+    }
+}
