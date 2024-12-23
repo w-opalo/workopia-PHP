@@ -7,6 +7,7 @@ use Framework\Database;
 class HomeController
 {
     protected $db;
+
     public function __construct()
     {
         // die('HomeController');

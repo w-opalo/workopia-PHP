@@ -3,10 +3,12 @@
 namespace App\controllers;
 
 use Framework\Database;
+use Framework\Validation;
 
 class ListingController
 {
     protected $db;
+
     public function __construct()
     {
 
@@ -16,7 +18,6 @@ class ListingController
 
     public function index()
     {
-
         $listings = $this->db->query('SELECT * FROM listings')->fetchAll();
 
         loadView("listings/index", [
@@ -45,10 +46,20 @@ class ListingController
             return;
         }
 
-
-
         loadView('listings/show', [
             'listing' => $listing
         ]);
+    }
+
+    /**
+     * Store data in database
+     * @return void
+     */
+    public function store()
+    {
+        $allowedFields = ['title', 'description', 'salary', 'requirements', 'benefits', 'company', 'city', 'state', 'tags', 'address', 'email', 'phone'];
+
+        $newListingData = array_intersect_key($_POST, array_flip($allowedFields));
+        inspectAndDie($newListingData);
     }
 }

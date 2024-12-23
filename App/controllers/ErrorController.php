@@ -2,6 +2,7 @@
 
 namespace App\controllers;
 
+
 class ErrorController
 {
     public static function notFound($message = 'Resource not found')
