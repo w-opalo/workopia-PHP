@@ -1,11 +1,10 @@
 <?php
-session_start();
 require __DIR__ . '/../vendor/autoload.php';
 
 use Framework\Router;
-// use Framework\Session;
+use Framework\Session;
 
-// Session::start();
+Session::start();
 
 require '../helpers.php';
 
